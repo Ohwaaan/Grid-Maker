@@ -4,9 +4,9 @@ Group Members:
 
 Name - Github
 
-Owen Lian - Ohwaaan
-Plinio Cabrera - cab-p
-Douglas Oviedo - doug-oviedo
-Sara Adbelrazek - saraabdel
+1. Owen Lian - Ohwaaan
+2. Plinio Cabrera - cab-p
+3. Douglas Oviedo - doug-oviedo
+4. Sara Adbelrazek - saraabdel
 
 This is the repository for assignment 3 - Grid-Maker
