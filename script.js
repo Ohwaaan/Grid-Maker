@@ -8,7 +8,7 @@ let grid = document.getElementById("grid");
 // Add a row
 function addR() {
 
-    if (numRows == 0 && numCols == 0){  //incase empty
+    if (numRows === 0 && numCols === 0){  //incase empty
         rowArr[0] = grid.insertRow(0);
         rowArr[0].insertCell(0);
         numCols++;
@@ -25,7 +25,7 @@ function addR() {
 // Add a column
 function addC() {
 
-    if (numRows == 0 && numCols == 0){  //incase empty
+    if (numRows === 0 && numCols === 0){  //incase empty
         rowArr[0] = grid.insertRow(0);
         rowArr[0].insertCell(0);
         numRows++;
@@ -40,13 +40,19 @@ function addC() {
 
 // Remove a row
 function removeR() {
-    alert("Clicked Remove Row"); // Replace this line with your code.
+    if (numRows > 0 && numCols > 0) {   //if there exists a grid
+        grid.deleteRow(0);              //delete the row
+        numRows--;
+        if(numRows === 0){              
+            numCols = 0
+        }
+    }   
 }
 
 // Remove a column
 function removeC() {
     alert("Clicked Remove Col"); // Replace this line with your code.
-
+    grid.delete
 }
 
 // Set global variable for selected color
