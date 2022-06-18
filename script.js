@@ -77,11 +77,11 @@ function fillU(){
 // Fill all cells
 function fillAll(){
     alert("Clicked Fill All"); // Replace this line with your code.
-//     for(col in rowArr){
-//         console.log(rowArr[col])
-//         grid.style.color = "red"
-//     }
-// }
+    // for(col in rowArr){
+    //     console.log(rowArr[col])
+    //     grid.style.color = "red"
+    // }
+}
 
 // Clear all cells
 function clearAll(){
