@@ -51,14 +51,16 @@ function removeR() {
 
 // Remove a column
 function removeC() {
-    if(numRows > 0 && numCols >0) {
-        for (i=0; i< numRows;i++)
+    if(numRows > 0 && numCols >0) {     // if there exist a grid
+        for (i=0; i< numRows;i++)   
         {
-            rowArr[i].deleteCell(0);
+            rowArr[i].deleteCell(0);    //delete the column
         }
         numCols--
+        if(numCols == 0){
+            numRows = 0;
+        }
     }
-
 }
 
 // Set global variable for selected color
@@ -75,6 +77,10 @@ function fillU(){
 // Fill all cells
 function fillAll(){
     alert("Clicked Fill All"); // Replace this line with your code.
+    for(col in rowArr){
+        console.log(rowArr[col])
+        grid.style.color = "red"
+    }
 }
 
 // Clear all cells
