@@ -51,8 +51,14 @@ function removeR() {
 
 // Remove a column
 function removeC() {
-    alert("Clicked Remove Col"); // Replace this line with your code.
-    grid.delete
+    if(numRows > 0 && numCols >0) {
+        for (i=0; i< numRows;i++)
+        {
+            rowArr[i].deleteCell(0);
+        }
+        numCols--
+    }
+
 }
 
 // Set global variable for selected color
