@@ -8,16 +8,16 @@ let grid = document.getElementById("grid");
 // Add a row
 function addR() {
 
-    if (numRows === 0 && numCols === 0){  //incase empty
-        rowArr[0]
+    if (numRows === 0 && numCols === 0) {   // incase empty
         rowArr[0] = grid.insertRow(0);
-        rowArr[0].insertCell(0);
+        rowArr[0].insertCell(0).setAttribute("onclick","style.backgroundColor=colorSelected");
         numCols++;
         numRows++;
-    } else {                            //Add a row with the amount of columns  
+    } else {                                // Add a row with the amount of columns  
         rowArr[numRows] = grid.insertRow(0);
         for(i=0; i<numCols; i++) {
-            rowArr[numRows].insertCell(0);      
+            td = rowArr[numRows].insertCell(0);     
+            td.setAttribute("onclick","style.backgroundColor=colorSelected") 
         }
         numRows++;
     }
@@ -26,14 +26,15 @@ function addR() {
 // Add a column
 function addC() {
 
-    if (numRows === 0 && numCols === 0){  //incase empty
+    if (numRows === 0 && numCols === 0) {   // incase empty
         rowArr[0] = grid.insertRow(0);
-        rowArr[0].insertCell(0);
+        rowArr[0].insertCell(0).setAttribute("onclick","style.backgroundColor=colorSelected");
         numRows++;
         numCols++;
-    } else {                            //add column with amount of rows
+    } else {                                // add column with amount of rows
         for(i=0; i< numRows; i++) {
-            rowArr[i].insertCell(0);
+            td = rowArr[i].insertCell(0);
+            td.setAttribute("onclick","style.backgroundColor=colorSelected")
         }
         numCols++
     }
@@ -41,8 +42,8 @@ function addC() {
 
 // Remove a row
 function removeR() {
-    if (numRows > 0 && numCols > 0) {   //if there exists a grid
-        grid.deleteRow(0);              //delete the row
+    if (numRows > 0 && numCols > 0) {   // if there exists a grid
+        grid.deleteRow(0);              // delete the row
         numRows--;
         if(numRows === 0){              
             numCols = 0
@@ -55,9 +56,9 @@ function removeC() {
     if(numRows > 0 && numCols >0) {     // if there exist a grid
         for (i=0; i< numRows;i++)   
         {
-            rowArr[i].deleteCell(0);    //delete the column
+            rowArr[i].deleteCell(0);    // delete the column
         }
-        numCols--
+        numCols--;
         if(numCols == 0){
             numRows = 0;
         }
@@ -68,7 +69,6 @@ function removeC() {
 function selectColor(){
     colorSelected = document.getElementById("selectedColorId").value;
     console.log(colorSelected);
-    //document.getElementById("td").onclick = 
 }
 
 // Fill all uncolored cells
@@ -77,8 +77,8 @@ function fillU(){
     let td = document.querySelectorAll("td");
 
     for(i = 0; i < td.length; i++) {
-        if(td.item(i).style.backgroundColor == "" || td.item(i).style.backgroundColor == "white" ){ //if no background color 
-            td.item(i).style.backgroundColor = colorSelected;   //fill background color 
+        if(td.item(i).style.backgroundColor == "" || td.item(i).style.backgroundColor == "white" ){ // if no background color 
+            td.item(i).style.backgroundColor = colorSelected;   // fill background color 
         }
     } 
 }
@@ -88,8 +88,8 @@ function fillAll(){
 
      let td = document.querySelectorAll("td");
 
-     for(i = 0; i < td.length; i++) {
-        td.item(i).style.backgroundColor = colorSelected;
+     for(i = 0; i < td.length; i++) {                       // set all grids to selected color
+        td.item(i).style.backgroundColor = colorSelected;   
      } 
 }
 
@@ -99,6 +99,6 @@ function clearAll(){
     let td = document.querySelectorAll("td");
 
     for(i = 0; i < td.length; i++) {
-       td.item(i).style.backgroundColor = "white";
+       td.item(i).style.backgroundColor = "";               // set all grids to no color
     } 
 }
