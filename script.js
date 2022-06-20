@@ -85,5 +85,8 @@ function fillAll(){
 
 // Clear all cells
 function clearAll(){
-    alert("Clicked Clear All"); // Replace this line with your code.
+    for(i = 0; i < numRows; i++){ //checks through avaliable rows
+        rowArr[i].clear(); //clears cells of a row
+    }
+    //alert("Clicked Clear All"); // Replace this line with your code.
 }
