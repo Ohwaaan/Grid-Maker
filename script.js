@@ -9,6 +9,7 @@ let grid = document.getElementById("grid");
 function addR() {
 
     if (numRows === 0 && numCols === 0){  //incase empty
+        rowArr[0]
         rowArr[0] = grid.insertRow(0);
         rowArr[0].insertCell(0);
         numCols++;
@@ -76,14 +77,19 @@ function fillU(){
 
 // Fill all cells
 function fillAll(){
-    alert("Clicked Fill All"); // Replace this line with your code.
-    // for(col in rowArr){
-    //     console.log(rowArr[col])
-    //     grid.style.color = "red"
-    // }
+
+     let td = document.querySelectorAll("td");
+
+     for(i = 0; i < td.length; i++) {
+        td.item(i).style.backgroundColor = colorSelected;
+     } 
 }
 
 // Clear all cells
 function clearAll(){
-    alert("Clicked Clear All"); // Replace this line with your code.
+    let td = document.querySelectorAll("td");
+
+    for(i = 0; i < td.length; i++) {
+       td.item(i).style.backgroundColor = "white";
+    } 
 }
