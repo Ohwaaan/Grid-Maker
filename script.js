@@ -68,11 +68,19 @@ function removeC() {
 function selectColor(){
     colorSelected = document.getElementById("selectedColorId").value;
     console.log(colorSelected);
+    //document.getElementById("td").onclick = 
 }
 
 // Fill all uncolored cells
 function fillU(){
-    alert("Clicked Fill All Uncolored"); // Replace this line with your code.
+ 
+    let td = document.querySelectorAll("td");
+
+    for(i = 0; i < td.length; i++) {
+        if(td.item(i).style.backgroundColor == "" || td.item(i).style.backgroundColor == "white" ){ //if no background color 
+            td.item(i).style.backgroundColor = colorSelected;   //fill background color 
+        }
+    } 
 }
 
 // Fill all cells
